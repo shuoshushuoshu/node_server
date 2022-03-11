@@ -31,13 +31,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function(req,res,next) {
   res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Origin', 'http://192.168.X.X:4200');
+  res.header('Access-Control-Allow-Origin', 'http://localhost:8081/#/');
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.writeHead(200, {
-    'Content-Type': 'application/json;charset=utf-8',
-    'Access-Control-Allow-Credentials': true,
-    'Access-Control-Allow-Origin':'*'
-  })
+  // res.writeHead(200, {
+  //   'Content-Type': 'application/json;charset=utf-8',
+  //   'Access-Control-Allow-Credentials': true,
+  //   'Access-Control-Allow-Origin':'*'
+  // })
   next();
 })
 app.use('/', indexRouter);
